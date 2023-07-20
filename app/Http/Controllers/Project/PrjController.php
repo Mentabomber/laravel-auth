@@ -12,6 +12,12 @@ class PrjController extends Controller
 
         $projects = Project:: all();
 
-        return view("index", compact('projects'));
-       }
+        return view("guest.index", compact('projects'));
+    }
+    public function show($id){
+
+        $project = Project :: findOrFail($id);
+
+        return view("logged.show", compact('project'));
+    }
 }

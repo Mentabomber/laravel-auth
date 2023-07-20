@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Project\PrjController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,8 +30,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('guest/index', [PrjController::class, 'index'] ) -> name('index');
-// ,function (){
-//     return view('guest.index');
-// }
+
+Route::get('show{id}', [PrjController::class, 'show'] ) -> name('show');
 require __DIR__.'/auth.php';
 

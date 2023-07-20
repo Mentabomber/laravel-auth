@@ -1,14 +1,14 @@
 @extends('layouts.app')
 @section('content')
     <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-        <div>
+        <div class="text-center">
             <h2>Projects</h2>
         </div>
 
-        <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+        <div class="text-center">
             <ul class="list-unstyled">
                 @foreach ($projects as $project)
-                    <li>{{ $project->title }}</li>
+                    <li><a href="{{ route('show', $project->id) }}">{{ $project->title }}</a></li>
                 @endforeach
             </ul>
         </div>
