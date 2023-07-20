@@ -28,4 +28,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('guest/index', [PrjController::class, 'index'] ) -> name('index');
+// ,function (){
+//     return view('guest.index');
+// }
 require __DIR__.'/auth.php';
+
