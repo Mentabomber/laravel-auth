@@ -12,6 +12,10 @@
             <span>Project Manager:{{ $project->project_manager }}</a></span>
             <br>
             <span>Project Img:{{ $project->thumb }}</a></span>
+            <br>
+            <br>
+            <br>
+            <a href="{{ route('index') }}">Back to Projects</a>
 
         </div>
     </div>

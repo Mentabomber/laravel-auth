@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Project\PrjController;
+use App\Http\Controllers\Status\GuestController;
+use App\Http\Controllers\Status\LoggedController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,8 +31,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('guest/index', [PrjController::class, 'index'] ) -> name('index');
+Route::get('index', [PrjController::class, 'index'] ) -> name('index');
 
-Route::get('show{id}', [PrjController::class, 'show'] ) -> name('show');
+Route::get('show{id}', [PrjController::class, 'show'] )->middleware(['auth'])->name('show');;
+
+
 require __DIR__.'/auth.php';
 
