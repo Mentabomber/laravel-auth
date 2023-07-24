@@ -9,12 +9,6 @@ use App\Models\Project;
 class LoggedController extends Controller
 {
 
-    public function indexPlus(){
-
-        $projects = Project:: all();
-
-        return view("logged.index", compact('projects'));
-    }
     public function show($id){
 
         $project = Project :: findOrFail($id);
